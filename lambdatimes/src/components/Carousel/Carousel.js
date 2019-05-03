@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 
 const lambdaCarouselImgs = carouselData.map((elem, index) => (
-  {
-    src: elem.url,
-    altText: `Slide ${index}`,
-    caption: elem.caption
-  }
-)
+    {
+      src: elem.url,
+      altText: `Slide ${index}`,
+      caption: elem.caption
+    }
+  )
 )
 
 class LambdaCarousel extends Component {
