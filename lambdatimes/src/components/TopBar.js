@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import LoginModal from './Login/LoginModal'
 
 // Refactor this component to use styled components and not classNames. 
 // You can find the corresponding CSS in the CSS/index.css file
@@ -66,21 +67,7 @@ const S_TopBarContainerCenterSpan = styled.span`
   }
 `;
 
-const S_TopBarContainerRight = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: row;
-  flex: 1;
-  font-size: 11px;
-  font-weight: bold;
-  `;
-
-  const S_TopBarContainerRightSpan = styled.span`
-  cursor: pointer;
-  `;
-
-const TopBar = () => {
+const TopBar = props => {
   return (
     <S_TopBar>
       <S_TopBarContainer>
@@ -94,9 +81,7 @@ const TopBar = () => {
           <S_TopBarContainerCenterSpan>MUSIC</S_TopBarContainerCenterSpan>
           <S_TopBarContainerCenterSpan>ANNOUNCEMENTS</S_TopBarContainerCenterSpan>
         </S_TopBarContainerCenter>
-        <S_TopBarContainerRight>
-          <S_TopBarContainerRightSpan>LOG IN</S_TopBarContainerRightSpan>
-        </S_TopBarContainerRight>
+        <LoginModal updateLoginStatus = {props.updateLoginStatus} />
       </S_TopBarContainer>
     </S_TopBar>
   )

@@ -5,6 +5,8 @@ import Content from './components/Content/Content';
 import styled from 'styled-components'
 
 
+
+
 const S_App = styled.div`
   display: flex;
   align-items: center;
@@ -14,14 +16,30 @@ const S_App = styled.div`
   font-family: 'PT Sans', sans-serif;
   `;
 
-const App = () => {
-  return (
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      isLoggedIn: false
+    }
+  }
+
+  updateLoginStatus = status => {
+    this.setState({
+      isLoggedIn : status
+    })
+  }
+
+  render() {
+    return (
     <S_App>
-      <TopBar />
+      <TopBar updateLoginStatus = {this.updateLoginStatus} />
       <Header />
       <Content />
     </S_App>
   );
+  }
 }
+
 
 export default App;
