@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Tabs from './Tabs';
 import Cards from './Cards';
+import LambdaCarousel from './../Carousel/Carousel';
 import styled from 'styled-components'
 
 
@@ -78,6 +79,7 @@ export default class Content extends Component {
           and `selectTabHandler` that includes the function to change the selected tab
         */}
         <Tabs tabs={this.state.tabs} selectedTab={this.state.selected} selectTabHandler={this.changeSelected}/>
+        <LambdaCarousel />
         <Cards cards={this.filterCards()} />
       </S_ContentContainer>
     );
