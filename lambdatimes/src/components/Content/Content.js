@@ -30,7 +30,6 @@ export default class Content extends Component {
     this.setState({
       selected : tab
     })
-
   };
 
   filterCards = () => {
@@ -46,15 +45,19 @@ export default class Content extends Component {
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
-    let tempFilter = this.state.cards.filter( card => {
+    let tempFilter = this.state.cards.filter( card => (
         card.tab === this.state.selected
-    })
-
+    ))
+      
     //this.setState({
     //  filteredCards : tempFilter
     //})
-
-    return tempFilter;
+    if(this.state.selected === "all") {
+      return this.state.cards;
+    } else {
+      return tempFilter;
+    }
+    
   };
 
   render() {
