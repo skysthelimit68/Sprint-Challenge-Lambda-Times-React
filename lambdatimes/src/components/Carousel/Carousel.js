@@ -16,11 +16,6 @@ class LambdaCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
-    this.next = this.next;
-    this.previous = this.previous;
-    this.goToIndex = this.goToIndex;
-    this.onExiting = this.onExiting;
-    this.onExited = this.onExited;
   }
 
   onExiting = () => this.animating = true;
