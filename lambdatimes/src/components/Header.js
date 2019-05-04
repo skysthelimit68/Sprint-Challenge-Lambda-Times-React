@@ -45,7 +45,7 @@ const S_HeaderH1 = styled.h1`
 const Header = () => {
   return (
     <S_Header>
-      <S_HeaderSpan type="date">SMARCH 32, 2018</S_HeaderSpan>
+      <S_HeaderSpan type="date">MARCH 30, 2018</S_HeaderSpan>
       <S_HeaderH1>Lambda Times</S_HeaderH1>
       <S_HeaderSpan type="temp">98°</S_HeaderSpan>
     </S_Header>
