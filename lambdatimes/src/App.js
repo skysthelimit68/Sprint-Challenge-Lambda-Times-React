@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Content from './components/Content/Content';
+import LoginPrompt from './components/Login/LoginPrompt';
+import withAuthenticate from './authentication/withAuthenticate';
 import styled from 'styled-components'
 
 
@@ -14,7 +16,10 @@ const S_App = styled.div`
   background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
+  height:100vh;
   `;
+
+let ComponentWithAuthentication = withAuthenticate(Content)(LoginPrompt)  
 
 class App extends React.Component {
   constructor(){
@@ -35,7 +40,7 @@ class App extends React.Component {
     <S_App>
       <TopBar updateLoginStatus = {this.updateLoginStatus} />
       <Header />
-      <Content />
+      <ComponentWithAuthentication />
     </S_App>
   );
   }
